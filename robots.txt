@@ -1,0 +1,12 @@
+# robots.txt for https://www.medialphaplus.com
+# 株式会社MEDI ALPHA PLUS
+
+# すべてのクローラーを許可
+User-agent: *
+Allow: /
+
+# クロール対象外（存在しないフォルダなどを除外）
+Disallow: /shopify/
+
+# サイトマップの場所をGoogleに伝える
+Sitemap: https://www.medialphaplus.com/sitemap.xml
