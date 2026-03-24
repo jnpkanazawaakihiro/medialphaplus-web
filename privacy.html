@@ -95,8 +95,80 @@
       transition: opacity 0.2s; flex-shrink: 0;
     }
     .nav-estimate-btn:hover { opacity: 0.88; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; display: block; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      background: var(--gray); border: 1px solid rgba(11,60,138,0.15);
+      border-radius: 8px; cursor: pointer; padding: 8px 10px; z-index: 1100;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none; position: fixed; top: 0; right: -100%;
+      width: min(300px, 88vw); height: 100vh; height: 100dvh;
+      background: #fff; z-index: 1999; padding: 0;
+      flex-direction: column; gap: 0;
+      border-left: 1px solid #e0e6f0;
+      box-shadow: -8px 0 40px rgba(13,43,94,0.12);
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1); overflow: hidden;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 2px solid #e0e6f0;
+      background: #fff; flex-shrink: 0;
+    }
+    .mobile-nav-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; padding-bottom: 24px; }
+    .mobile-nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .mobile-nav-logo-icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden; padding: 0;
+    }
+    .mobile-nav-logo-text { display: flex; flex-direction: column; }
+    .mobile-nav-logo-sub  { font-size: 7px; color: #7a8aaa; letter-spacing: 0.08em; line-height: 1; }
+    .mobile-nav-logo-name { font-size: 11px; font-weight: 900; color: var(--navy); letter-spacing: 0.04em; line-height: 1.3; }
+    .mobile-nav-close {
+      width: 36px; height: 36px; background: #f4f7fb; border: 1px solid #e0e6f0;
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 16px; color: var(--navy); flex-shrink: 0; transition: background 0.2s;
+    }
+    .mobile-nav-close:hover { background: #e0e6f0; }
+    .mobile-link-home { flex-shrink: 0; background: #f4f7fb; border-bottom: 2px solid #e0e6f0 !important; }
+    .mobile-link-home:hover { background: #e8f0fc !important; }
+    .mobile-nav a.mobile-link {
+      display: flex; align-items: center; padding: 11px 20px;
+      color: #3a4a6a; text-decoration: none; font-size: 13px; font-weight: 500;
+      border-bottom: 1px solid #e0e6f0; transition: all 0.2s; gap: 8px;
+    }
+    .mobile-nav a.mobile-link::before {
+      content: ''; display: block; width: 3px; height: 16px;
+      background: transparent; border-radius: 2px; transition: background 0.2s; flex-shrink: 0;
+    }
+    .mobile-nav a.mobile-link:hover { background: #f4f7fb; color: var(--navy); padding-left: 28px; }
+    .mobile-nav a.mobile-link:hover::before { background: var(--blue); }
+    .mobile-nav .mobile-estimate {
+      margin: 14px 16px 0; display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff; text-decoration: none; padding: 12px 16px; border-radius: 10px;
+      font-size: 13px; font-weight: 800; letter-spacing: 0.04em;
+      box-shadow: 0 4px 16px rgba(13,43,94,0.28); transition: all 0.25s;
+    }
+    .mobile-nav .mobile-estimate:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,43,94,0.36); }
+    .mobile-nav .mobile-contact { margin: 12px 16px 0; padding: 14px 16px; background: #f4f7fb; border-radius: 12px; border: 1px solid #e0e6f0; }
+    .mobile-nav .mobile-contact-label { font-size: 9px; font-weight: 800; letter-spacing: 0.16em; color: var(--blue); text-transform: uppercase; margin-bottom: 4px; }
+    .mobile-nav .mobile-phone {
+      display: flex; align-items: center; gap: 7px; text-decoration: none; color: var(--navy);
+      font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 900; letter-spacing: 0.04em; margin-bottom: 3px;
+    }
+    .mobile-nav .mobile-phone i { color: var(--blue); font-size: 13px; }
+    .mobile-nav .mobile-hours { font-size: 9.5px; color: #7a8aaa; line-height: 1.5; margin-bottom: 10px; }
+    .mobile-nav .mobile-email-link { display: flex; align-items: center; gap: 6px; text-decoration: none; color: #7a8aaa; font-size: 11px; padding: 4px 0; }
+    .mobile-nav .mobile-email-link i { color: var(--blue); font-size: 10px; }
+    .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 1998; backdrop-filter: blur(2px); }
+    .mobile-nav-overlay.open { display: block; }
 
     /* ── PAGE HERO ── */
     .page-hero {
@@ -142,9 +214,14 @@
     .footer-links { margin-bottom: 16px; }
     .footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
 
+    @media (min-width: 768px) {
+      .nav-links, .nav-contact { display: flex !important; }
+      .hamburger { display: none !important; }
+    }
     @media (max-width: 767px) {
-      .nav-links, .nav-contact { display: none; }
-      .hamburger { display: flex; margin-left: auto; }
+      .nav-links, .nav-contact { display: none !important; }
+      .hamburger { display: flex !important; }
+      .mobile-nav { display: flex; }
       .top-bar-catch { font-size: 9px; }
     }
   </style>
@@ -198,6 +275,62 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <!-- モバイルオーバーレイ & ドロワー -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="mobile-nav-logo" onclick="closeMobileNav()">
+        <div class="mobile-nav-logo-icon" style="overflow:hidden;padding:0;">
+          <img src="https://cdn.shopify.com/s/files/1/1026/3389/8065/files/549737_eef196e6b55144ea8a0db0d526b3bfa5mv2_1.png?v=1774050009" alt="MEDI ALPHA PLUS ロゴ" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="mobile-nav-logo-text">
+          <span class="mobile-nav-logo-sub">MEDICAL SPECIMEN LOGISTICS</span>
+          <span class="mobile-nav-logo-name">MEDI ALPHA PLUS</span>
+        </div>
+      </a>
+      <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="メニューを閉じる">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <a href="index.html" class="mobile-link mobile-link-home" onclick="closeMobileNav()" style="flex-shrink:0;border-top:none;display:flex;align-items:center;padding:11px 20px;gap:8px;">
+      <i class="fa fa-home" style="color:var(--blue);font-size:11px;"></i>ホーム
+    </a>
+    <div class="mobile-nav-scroll">
+      <a href="services.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-briefcase-medical" style="color:var(--blue);font-size:11px;"></i>サービス
+      </a>
+      <a href="https://medialphaplus.myshopify.com/" class="mobile-link" target="_blank" rel="noopener">
+        <i class="fa fa-shopping-cart" style="color:var(--blue);font-size:11px;"></i>販売
+      </a>
+      <a href="achievements.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-chart-bar" style="color:var(--blue);font-size:11px;"></i>実績
+      </a>
+      <a href="pricing.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-tag" style="color:var(--blue);font-size:11px;"></i>料金表
+      </a>
+      <a href="vehicles.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-car" style="color:var(--blue);font-size:11px;"></i>車輌情報
+      </a>
+      <a href="about.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-building" style="color:var(--blue);font-size:11px;"></i>会社概要
+      </a>
+      <a href="https://medialphaplus.myshopify.com/pages/contact" class="mobile-estimate" target="_blank" onclick="closeMobileNav()">
+        <i class="fa fa-file-alt"></i>今すぐ相談する
+        <i class="fa fa-arrow-right" style="font-size:10px;margin-left:4px;"></i>
+      </a>
+      <div class="mobile-contact">
+        <div class="mobile-contact-label">フリーダイヤル</div>
+        <a href="tel:0120843297" class="mobile-phone">
+          <i class="fa fa-phone"></i>0120-843-297
+        </a>
+        <div class="mobile-hours">受付時間&nbsp; 平日 10:00〜17:00<br>（土・日・祝日・年末年始を除く）</div>
+        <a href="mailto:info@medialphaplus.com" class="mobile-email-link">
+          <i class="fa fa-envelope"></i>info@medialphaplus.com
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- PAGE HERO -->
   <div class="page-hero">
@@ -288,6 +421,24 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
+    function closeMobileNav() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.getElementById('hamburgerBtn').classList.remove('active');
+    }
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav    = document.getElementById('mobileNav');
+    const mobileOverlay= document.getElementById('mobileOverlay');
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        mobileOverlay.classList.toggle('open');
+      });
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', closeMobileNav);
+    }
   </script>
 
 </body>

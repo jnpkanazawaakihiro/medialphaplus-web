@@ -132,16 +132,18 @@
     .nav-links a.active { color: var(--navy); }
     .nav-contact { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
     .nav-phone-btn {
-      display: inline-flex; align-items: center; gap: 13px; text-decoration: none;
-      background: linear-gradient(135deg, #fafcff 0%, #fff 60%, #f5f8ff 100%);
-      border: 1px solid rgba(197,168,100,0.35); border-radius: 10px;
-      padding: 6px 28px 6px 8px; transition: all 0.28s; white-space: nowrap;
-      box-shadow: 0 2px 14px rgba(13,43,94,0.07); position: relative; overflow: hidden; min-width: 230px;
+      display: inline-flex; align-items: center; gap: 14px;
+      text-decoration: none;
+      background: linear-gradient(120deg, #ffffff 0%, #fafcff 50%, #f8fbff 100%);
+      border: 1px solid rgba(197,168,100,0.4); border-radius: 12px;
+      padding: 4px 32px 4px 9px; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); white-space: nowrap;
+      box-shadow: 0 2px 18px rgba(13,43,94,0.09), inset 0 1px 0 rgba(255,255,255,1); position: relative; overflow: hidden;
+      min-width: 270px;
     }
     .nav-phone-btn::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
       background: linear-gradient(to bottom, rgba(220,190,120,0.9), rgba(197,140,60,0.95));
-      border-radius: 10px 0 0 10px;
+      border-radius: 12px 0 0 12px;
     }
     .nav-phone-btn::after {
       content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
@@ -153,18 +155,18 @@
       border-color: rgba(197,168,100,0.6);
       background: linear-gradient(135deg, #fffdf5 0%, #fff 60%, #fffbee 100%);
       transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(13,43,94,0.11), inset 0 1px 0 rgba(255,255,255,1);
+      box-shadow: 0 6px 22px rgba(13,43,94,0.11), 0 0 0 1px rgba(197,168,100,0.2), inset 0 1px 0 rgba(255,255,255,1);
     }
     .nav-phone-icon {
-      width: 34px; height: 34px;
-      background: linear-gradient(135deg, #0d2b5e 0%, #1a4899 100%);
-      border-radius: 9px; display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; box-shadow: 0 2px 10px rgba(13,43,94,0.28);
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #0d2b5e 0%, #1e55b0 100%);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: 0 3px 12px rgba(13,43,94,0.32), 0 0 0 1px rgba(197,168,100,0.22);
     }
-    .nav-phone-icon i { font-size: 13px; color: #fff; }
+    .nav-phone-icon i { font-size: 15px; color: #fff; }
     .nav-phone-text { display: flex; flex-direction: column; gap: 1px; }
-    .nav-phone-label { font-size: 8.5px; letter-spacing: 0.18em; color: rgba(165,130,50,1); font-weight: 800; line-height: 1; }
-    .nav-phone-number { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 900; color: var(--navy); letter-spacing: 0.06em; line-height: 1.1; }
+    .nav-phone-label { font-size: 8px; letter-spacing: 0.22em; color: rgba(165,130,50,1); font-weight: 800; line-height: 1; margin-bottom: 2px; text-transform: uppercase; }
+    .nav-phone-number { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 900; color: var(--navy); letter-spacing: 0.08em; line-height: 1.1; }
     .nav-phone-hours { font-size: 7.5px; color: #7a8aaa; line-height: 1.35; margin-top: 2px; }
     .nav-estimate-btn {
       display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
