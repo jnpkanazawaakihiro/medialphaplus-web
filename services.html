@@ -1202,6 +1202,231 @@
       .hamburger   { display: flex !important; }
       .mobile-nav  { display: flex; }
     }
+
+    /* ════════════════════════════════════════
+       新サービス詳細セクション（追加）
+    ════════════════════════════════════════ */
+    #new-services {
+      background: var(--white);
+      padding: 100px 0 80px;
+    }
+    .new-services-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    .new-services-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    /* サービス詳細カード：大カード */
+    .nsrv-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(13,43,94,0.10);
+      margin-bottom: 48px;
+      border: 1px solid var(--gray-light);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .nsrv-card:hover {
+      box-shadow: 0 16px 64px rgba(13,43,94,0.16);
+      transform: translateY(-4px);
+    }
+    .nsrv-card--reverse {
+      direction: rtl;
+    }
+    .nsrv-card--reverse .nsrv-content,
+    .nsrv-card--reverse .nsrv-image-wrap {
+      direction: ltr;
+    }
+    .nsrv-image-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+    }
+    .nsrv-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .nsrv-card:hover .nsrv-image-wrap img {
+      transform: scale(1.04);
+    }
+    .nsrv-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,43,94,0.35) 0%, rgba(13,43,94,0.08) 100%);
+      pointer-events: none;
+    }
+    .nsrv-image-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13,43,94,0.88);
+      border: 1px solid rgba(197,168,100,0.5);
+      color: rgba(197,168,100,1);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(4px);
+    }
+    .nsrv-content {
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .nsrv-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .nsrv-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 2px;
+    }
+    .nsrv-num {
+      font-size: 64px;
+      font-weight: 900;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-light);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -2px;
+    }
+    .nsrv-title {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Zen Old Mincho', serif;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+    .nsrv-desc {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+    .nsrv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .nsrv-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+    .nsrv-tag i { font-size: 9px; color: var(--blue); }
+    /* 即時出動オプションボックス */
+    .nsrv-option-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 14px;
+      padding: 24px 28px;
+      color: #fff;
+      margin-top: 8px;
+      border: 1px solid rgba(197,168,100,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .nsrv-option-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .nsrv-option-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.14em;
+      background: rgba(197,168,100,0.12);
+      border: 1px solid rgba(197,168,100,0.3);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .nsrv-option-title {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Zen Old Mincho', serif;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+    .nsrv-option-desc {
+      font-size: 13px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.80);
+    }
+    .nsrv-option-note {
+      font-size: 11.5px;
+      color: rgba(197,168,100,0.85);
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(197,168,100,0.2);
+      line-height: 1.7;
+    }
+    /* レスポンシブ */
+    @media (max-width: 1024px) {
+      .nsrv-card {
+        grid-template-columns: 1fr;
+      }
+      .nsrv-card--reverse {
+        direction: ltr;
+      }
+      .nsrv-image-wrap {
+        min-height: 280px;
+      }
+      .nsrv-content {
+        padding: 40px 36px;
+      }
+    }
+    @media (max-width: 767px) {
+      #new-services { padding: 64px 0 60px; }
+      .new-services-inner { padding: 0 20px; }
+      .nsrv-image-wrap { min-height: 240px; }
+      .nsrv-content { padding: 32px 24px; }
+      .nsrv-num { font-size: 44px; }
+      .nsrv-title { font-size: 18px; }
+      .nsrv-option-box { padding: 20px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -1905,6 +2130,85 @@
       <div class="hygiene-badge"><i class="fa fa-clipboard-list"></i>記録・報告</div>
       <div class="hygiene-badge"><i class="fa fa-shield-alt"></i>個人情報厳守</div>
     </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     6-B. 新サービス詳細（手術器具回収・夜間緊急）
+════════════════════════════════════════ -->
+<section id="new-services">
+  <div class="new-services-inner">
+    <div class="new-services-header fade-up">
+      <div class="section-eyebrow">New Services</div>
+      <h2 class="section-title">新たなご対応サービス</h2>
+      <div class="gold-line"></div>
+      <p class="section-desc" style="max-width:560px;margin:0 auto;">医療現場のニーズに応え、新たに2つのサービスを追加しました。</p>
+    </div>
+
+    <!-- カード① 手術器具回収・滅菌輸送 -->
+    <div class="nsrv-card fade-up">
+      <div class="nsrv-image-wrap">
+        <img src="images/S__6094969.jpg" alt="手術器具回収・滅菌輸送サービス — 使用済み手術器具の引き渡し" loading="lazy">
+        <div class="nsrv-image-overlay"></div>
+        <div class="nsrv-image-badge"><i class="fa fa-recycle"></i>回収〜返却まで一括対応</div>
+      </div>
+      <div class="nsrv-content">
+        <div class="nsrv-eyebrow">Surgical Instrument Logistics</div>
+        <div class="nsrv-num">01</div>
+        <h3 class="nsrv-title">手術器具回収・<br>滅菌輸送サービス</h3>
+        <p class="nsrv-desc">
+          MEDI ALPHA PLUSでは、手術後に発生する医療器具の回収から滅菌センターへの搬送、返却までを一括で対応いたします。<br>
+          院内スタッフやメーカー担当者が担っている非効率な回収業務を、専門の医療輸送体制により代行します。
+        </p>
+        <div class="nsrv-tags">
+          <span class="nsrv-tag"><i class="fa fa-box"></i>使用済み器具回収</span>
+          <span class="nsrv-tag"><i class="fa fa-hospital"></i>滅菌センター搬送</span>
+          <span class="nsrv-tag"><i class="fa fa-undo"></i>返却対応</span>
+          <span class="nsrv-tag"><i class="fa fa-hand-paper"></i>スーツ着用・白手袋</span>
+          <span class="nsrv-tag"><i class="fa fa-shield-alt"></i>専用容器管理</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード② 夜間緊急回収・搬送 -->
+    <div class="nsrv-card nsrv-card--reverse fade-up" style="transition-delay:0.1s;">
+      <div class="nsrv-image-wrap">
+        <img src="images/S__6094972.jpg" alt="夜間緊急回収・搬送 — 深夜の緊急輸送対応" loading="lazy">
+        <div class="nsrv-image-overlay"></div>
+        <div class="nsrv-image-badge"><i class="fa fa-moon"></i>夜間・深夜対応</div>
+      </div>
+      <div class="nsrv-content">
+        <div class="nsrv-eyebrow">Night Emergency Transport</div>
+        <div class="nsrv-num">02</div>
+        <h3 class="nsrv-title">夜間緊急回収・<br>搬送サービス</h3>
+        <p class="nsrv-desc">
+          夜間に発生する検体・医療資材・手術関連物品の回収および搬送に対応いたします。<br>
+          突発的なご依頼にも柔軟に対応し、迅速かつ確実な輸送を実現します。
+        </p>
+        <div class="nsrv-tags">
+          <span class="nsrv-tag"><i class="fa fa-clock"></i>夜間・深夜対応</span>
+          <span class="nsrv-tag"><i class="fa fa-vial"></i>検体回収</span>
+          <span class="nsrv-tag"><i class="fa fa-first-aid"></i>手術関連物品</span>
+          <span class="nsrv-tag"><i class="fa fa-bolt"></i>突発依頼対応</span>
+        </div>
+
+        <!-- 即時出動オプション -->
+        <div class="nsrv-option-box">
+          <div class="nsrv-option-label"><i class="fa fa-star"></i>常駐オプション</div>
+          <div class="nsrv-option-title">即時出動対応（常駐プラン）</div>
+          <p class="nsrv-option-desc">
+            待機ドライバーを常時配置し、対応可能な状態で待機。<br>
+            ご依頼をいただき次第、都内エリア最短30分で現場へ出動いたします。
+          </p>
+          <p class="nsrv-option-note">
+            ※本プランは別途ご契約が必要となりますが、<br>
+            ご予算や運用内容に応じて柔軟にお見積りいたします。
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
