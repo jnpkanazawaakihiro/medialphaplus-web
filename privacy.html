@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー｜MEDI ALPHA PLUS</title>
+  <meta name="description" content="株式会社MEDI ALPHA PLUSのプライバシーポリシーページです。個人情報の取り扱いについてご説明します。">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:   #0b3c8a;
+      --gold:   #c8a45a;
+      --navy:   #0a1628;
+      --white:  #ffffff;
+      --gray:   #f5f5f5;
+      --text:   #1a1a2e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans JP', 'Inter', sans-serif; color: var(--text); background: #fff; line-height: 1.8; }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      background: linear-gradient(90deg, #0a1222 0%, #0e1a30 40%, #12204a 100%);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 2000;
+      border-bottom: 1px solid rgba(197,168,100,0.15);
+    }
+    .top-bar-catch {
+      font-size: 10.5px;
+      color: rgba(220,190,120,0.85);
+      letter-spacing: 0.07em;
+      font-weight: 500;
+      font-style: italic;
+    }
+    .top-bar-right { display: flex; align-items: center; gap: 14px; }
+    .top-bar-badge {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 10px;
+      color: rgba(220,190,120,0.9);
+      letter-spacing: 0.04em;
+    }
+    .top-bar-divider { width: 1px; height: 14px; background: rgba(197,168,100,0.2); }
+
+    /* ── NAVBAR ── */
+    nav#navbar {
+      position: fixed;
+      top: 36px; left: 0; right: 0;
+      z-index: 1900;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 28px;
+      height: 76px;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid rgba(11,60,138,0.1);
+      transition: box-shadow 0.3s;
+    }
+    nav#navbar.scrolled { box-shadow: 0 4px 24px rgba(11,60,138,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .logo-icon { width: 44px; height: 44px; border-radius: 8px; overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text-wrap { display: flex; flex-direction: column; line-height: 1.15; }
+    .logo-sub { font-size: 8.5px; letter-spacing: 0.12em; color: var(--blue); font-weight: 600; text-transform: uppercase; }
+    .logo-name { font-size: 15px; font-weight: 700; color: var(--navy); letter-spacing: 0.04em; }
+    .nav-links { display: flex; list-style: none; gap: 4px; margin-left: auto; }
+    .nav-links a {
+      font-size: 12.5px; font-weight: 600; color: var(--navy); text-decoration: none;
+      padding: 6px 10px; border-radius: 5px; transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); background: rgba(11,60,138,0.06); }
+    .nav-contact { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-phone-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(11,60,138,0.05); border: 1px solid rgba(11,60,138,0.12);
+      border-radius: 8px; padding: 6px 12px; text-decoration: none; transition: background 0.2s;
+    }
+    .nav-phone-btn:hover { background: rgba(11,60,138,0.1); }
+    .nav-phone-icon { color: var(--blue); font-size: 14px; }
+    .nav-phone-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-phone-label { font-size: 9px; color: rgba(10,22,40,0.55); font-weight: 600; letter-spacing: 0.06em; }
+    .nav-phone-number { font-size: 15px; font-weight: 800; color: var(--navy); letter-spacing: 0.02em; }
+    .nav-phone-hours { font-size: 8.5px; color: rgba(10,22,40,0.45); }
+    .nav-estimate-btn {
+      display: flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, #c8a45a, #e8c87a);
+      color: var(--navy); font-size: 12px; font-weight: 700;
+      padding: 10px 16px; border-radius: 8px; text-decoration: none;
+      transition: opacity 0.2s; flex-shrink: 0;
+    }
+    .nav-estimate-btn:hover { opacity: 0.88; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      background: var(--gray); border: 1px solid rgba(11,60,138,0.15);
+      border-radius: 8px; cursor: pointer; padding: 8px 10px; z-index: 1100;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none; position: fixed; top: 0; right: -100%;
+      width: min(300px, 88vw); height: 100vh; height: 100dvh;
+      background: #fff; z-index: 1999; padding: 0;
+      flex-direction: column; gap: 0;
+      border-left: 1px solid #e0e6f0;
+      box-shadow: -8px 0 40px rgba(13,43,94,0.12);
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1); overflow: hidden;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 2px solid #e0e6f0;
+      background: #fff; flex-shrink: 0;
+    }
+    .mobile-nav-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; padding-bottom: 24px; }
+    .mobile-nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .mobile-nav-logo-icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden; padding: 0;
+    }
+    .mobile-nav-logo-text { display: flex; flex-direction: column; }
+    .mobile-nav-logo-sub  { font-size: 7px; color: #7a8aaa; letter-spacing: 0.08em; line-height: 1; }
+    .mobile-nav-logo-name { font-size: 11px; font-weight: 900; color: var(--navy); letter-spacing: 0.04em; line-height: 1.3; }
+    .mobile-nav-close {
+      width: 36px; height: 36px; background: #f4f7fb; border: 1px solid #e0e6f0;
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 16px; color: var(--navy); flex-shrink: 0; transition: background 0.2s;
+    }
+    .mobile-nav-close:hover { background: #e0e6f0; }
+    .mobile-link-home { flex-shrink: 0; background: #f4f7fb; border-bottom: 2px solid #e0e6f0 !important; }
+    .mobile-link-home:hover { background: #e8f0fc !important; }
+    .mobile-nav a.mobile-link {
+      display: flex; align-items: center; padding: 11px 20px;
+      color: #3a4a6a; text-decoration: none; font-size: 13px; font-weight: 500;
+      border-bottom: 1px solid #e0e6f0; transition: all 0.2s; gap: 8px;
+    }
+    .mobile-nav a.mobile-link::before {
+      content: ''; display: block; width: 3px; height: 16px;
+      background: transparent; border-radius: 2px; transition: background 0.2s; flex-shrink: 0;
+    }
+    .mobile-nav a.mobile-link:hover { background: #f4f7fb; color: var(--navy); padding-left: 28px; }
+    .mobile-nav a.mobile-link:hover::before { background: var(--blue); }
+    .mobile-nav .mobile-estimate {
+      margin: 14px 16px 0; display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff; text-decoration: none; padding: 12px 16px; border-radius: 10px;
+      font-size: 13px; font-weight: 800; letter-spacing: 0.04em;
+      box-shadow: 0 4px 16px rgba(13,43,94,0.28); transition: all 0.25s;
+    }
+    .mobile-nav .mobile-estimate:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,43,94,0.36); }
+    .mobile-nav .mobile-contact { margin: 12px 16px 0; padding: 14px 16px; background: #f4f7fb; border-radius: 12px; border: 1px solid #e0e6f0; }
+    .mobile-nav .mobile-contact-label { font-size: 9px; font-weight: 800; letter-spacing: 0.16em; color: var(--blue); text-transform: uppercase; margin-bottom: 4px; }
+    .mobile-nav .mobile-phone {
+      display: flex; align-items: center; gap: 7px; text-decoration: none; color: var(--navy);
+      font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 900; letter-spacing: 0.04em; margin-bottom: 3px;
+    }
+    .mobile-nav .mobile-phone i { color: var(--blue); font-size: 13px; }
+    .mobile-nav .mobile-hours { font-size: 9.5px; color: #7a8aaa; line-height: 1.5; margin-bottom: 10px; }
+    .mobile-nav .mobile-email-link { display: flex; align-items: center; gap: 6px; text-decoration: none; color: #7a8aaa; font-size: 11px; padding: 4px 0; }
+    .mobile-nav .mobile-email-link i { color: var(--blue); font-size: 10px; }
+    .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 1998; backdrop-filter: blur(2px); }
+    .mobile-nav-overlay.open { display: block; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 160px 20px 60px;
+      background: linear-gradient(135deg, #0a1628 0%, #0b3c8a 100%);
+      text-align: center;
+      color: #fff;
+    }
+    .page-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; letter-spacing: 0.04em; }
+    .page-hero .breadcrumb {
+      margin-top: 14px; font-size: 13px; color: rgba(255,255,255,0.6);
+    }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: var(--gold); }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+    .content-wrap h2 {
+      font-size: 18px; font-weight: 700; color: var(--blue);
+      border-left: 4px solid var(--gold);
+      padding-left: 12px; margin: 40px 0 14px;
+    }
+    .content-wrap p { font-size: 14.5px; color: #333; margin-bottom: 14px; }
+    .content-wrap ul { list-style: disc; padding-left: 24px; margin-bottom: 14px; }
+    .content-wrap ul li { font-size: 14.5px; color: #333; margin-bottom: 6px; }
+    .content-wrap .date-note { text-align: right; font-size: 13px; color: #777; margin-top: 60px; }
+    .content-wrap a { color: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: var(--gold); }
+    .footer-links { margin-bottom: 16px; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+    @media (min-width: 768px) {
+      .nav-links, .nav-contact { display: flex !important; }
+      .hamburger { display: none !important; }
+    }
+    @media (max-width: 767px) {
+      .nav-links, .nav-contact { display: none !important; }
+      .hamburger { display: flex !important; }
+      .mobile-nav { display: flex; }
+      .top-bar-catch { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-catch">— Medical Specimen Logistics — 24h Emergency Response Available</div>
+    <div class="top-bar-right">
+      <div class="top-bar-badge"><span>🛡</span> UN3373適合</div>
+      <div class="top-bar-divider"></div>
+      <div class="top-bar-badge">医療の現場を支える、確かな品質と信頼。</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="https://cdn.shopify.com/s/files/1/1026/3389/8065/files/549737_eef196e6b55144ea8a0db0d526b3bfa5mv2_1.png?v=1774050009" alt="MEDI ALPHA PLUS ロゴ">
+      </div>
+      <div class="logo-text-wrap">
+        <div class="logo-sub">MEDICAL SPECIMEN LOGISTICS</div>
+        <div class="logo-name">MEDI ALPHA PLUS</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="https://medialphaplus.myshopify.com/" target="_blank" rel="noopener">販売</a></li>
+      <li><a href="achievements.html">実績</a></li>
+      <li><a href="pricing.html">料金表</a></li>
+      <li><a href="vehicles.html">車輌情報</a></li>
+      <li><a href="about.html">会社概要</a></li>
+    </ul>
+    <div class="nav-contact">
+      <a href="tel:0120843297" class="nav-phone-btn">
+        <div class="nav-phone-icon"><i class="fa fa-phone"></i></div>
+        <div class="nav-phone-text">
+          <span class="nav-phone-label">フリーダイヤル</span>
+          <span class="nav-phone-number">0120-843-297</span>
+          <span class="nav-phone-hours">受付時間&nbsp; 平日 10:00〜17:00</span>
+        </div>
+      </a>
+      <a href="https://medialphaplus.myshopify.com/pages/contact" class="nav-estimate-btn" target="_blank">
+        <i class="fa fa-file-alt"></i>見積依頼
+      </a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- モバイルオーバーレイ & ドロワー -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="mobile-nav-logo" onclick="closeMobileNav()">
+        <div class="mobile-nav-logo-icon" style="overflow:hidden;padding:0;">
+          <img src="https://cdn.shopify.com/s/files/1/1026/3389/8065/files/549737_eef196e6b55144ea8a0db0d526b3bfa5mv2_1.png?v=1774050009" alt="MEDI ALPHA PLUS ロゴ" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="mobile-nav-logo-text">
+          <span class="mobile-nav-logo-sub">MEDICAL SPECIMEN LOGISTICS</span>
+          <span class="mobile-nav-logo-name">MEDI ALPHA PLUS</span>
+        </div>
+      </a>
+      <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="メニューを閉じる">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <a href="index.html" class="mobile-link mobile-link-home" onclick="closeMobileNav()" style="flex-shrink:0;border-top:none;display:flex;align-items:center;padding:11px 20px;gap:8px;">
+      <i class="fa fa-home" style="color:var(--blue);font-size:11px;"></i>ホーム
+    </a>
+    <div class="mobile-nav-scroll">
+      <a href="services.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-briefcase-medical" style="color:var(--blue);font-size:11px;"></i>サービス
+      </a>
+      <a href="https://medialphaplus.myshopify.com/" class="mobile-link" target="_blank" rel="noopener">
+        <i class="fa fa-shopping-cart" style="color:var(--blue);font-size:11px;"></i>販売
+      </a>
+      <a href="achievements.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-chart-bar" style="color:var(--blue);font-size:11px;"></i>実績
+      </a>
+      <a href="pricing.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-tag" style="color:var(--blue);font-size:11px;"></i>料金表
+      </a>
+      <a href="vehicles.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-car" style="color:var(--blue);font-size:11px;"></i>車輌情報
+      </a>
+      <a href="about.html" class="mobile-link" onclick="closeMobileNav()">
+        <i class="fa fa-building" style="color:var(--blue);font-size:11px;"></i>会社概要
+      </a>
+      <a href="https://medialphaplus.myshopify.com/pages/contact" class="mobile-estimate" target="_blank" onclick="closeMobileNav()">
+        <i class="fa fa-file-alt"></i>今すぐ相談する
+        <i class="fa fa-arrow-right" style="font-size:10px;margin-left:4px;"></i>
+      </a>
+      <div class="mobile-contact">
+        <div class="mobile-contact-label">フリーダイヤル</div>
+        <a href="tel:0120843297" class="mobile-phone">
+          <i class="fa fa-phone"></i>0120-843-297
+        </a>
+        <div class="mobile-hours">受付時間&nbsp; 平日 10:00〜17:00<br>（土・日・祝日・年末年始を除く）</div>
+        <a href="mailto:info@medialphaplus.com" class="mobile-email-link">
+          <i class="fa fa-envelope"></i>info@medialphaplus.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>プライバシーポリシー</h1>
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a> &rsaquo; プライバシーポリシー
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+
+    <p>株式会社MEDI ALPHA PLUS（以下「当社」）は、お客様の個人情報の重要性を深く認識し、個人情報の保護に関する法律（個人情報保護法）をはじめとする関係法令を遵守するとともに、以下のプライバシーポリシーに従い、適切な管理・利用を行います。</p>
+
+    <h2>1. 個人情報の定義</h2>
+    <p>本ポリシーにおける「個人情報」とは、生存する個人に関する情報であって、氏名・住所・電話番号・メールアドレスなど、特定の個人を識別することができる情報をいいます。</p>
+
+    <h2>2. 個人情報の収集</h2>
+    <p>当社は、以下の場合に個人情報を収集することがあります。</p>
+    <ul>
+      <li>お問い合わせフォームからのご連絡</li>
+      <li>お見積もり・ご依頼の申し込み</li>
+      <li>契約書・書類の締結</li>
+      <li>サービスのご利用に際した各種手続き</li>
+    </ul>
+
+    <h2>3. 個人情報の利用目的</h2>
+    <p>収集した個人情報は、以下の目的のためにのみ利用します。</p>
+    <ul>
+      <li>サービスのご提供・業務連絡</li>
+      <li>お問い合わせへの回答</li>
+      <li>お見積もり・契約に関する手続き</li>
+      <li>サービス改善・新サービス開発のための統計分析（個人を特定しない形式）</li>
+      <li>法令上の義務履行</li>
+    </ul>
+
+    <h2>4. 個人情報の第三者提供</h2>
+    <p>当社は、以下の場合を除き、取得した個人情報を第三者に提供することはありません。</p>
+    <ul>
+      <li>ご本人の同意がある場合</li>
+      <li>法令に基づく場合</li>
+      <li>人命・身体または財産の保護のために必要な場合</li>
+      <li>国の機関もしくは地方公共団体またはその委託を受けた者が、法令の定める事務を遂行するために協力する必要がある場合</li>
+    </ul>
+
+    <h2>5. 個人情報の管理</h2>
+    <p>当社は、個人情報の漏洩・紛失・毀損を防止するため、適切な安全管理措置を講じます。また、個人情報を取り扱う従業員に対し、適切な監督・教育を実施します。</p>
+
+    <h2>6. 個人情報の開示・訂正・削除</h2>
+    <p>ご本人から自己の個人情報の開示・訂正・削除をご要望の場合は、下記のお問い合わせ先までご連絡ください。ご本人確認のうえ、合理的な期間内に対応いたします。</p>
+
+    <h2>7. Cookie（クッキー）について</h2>
+    <p>当社のウェブサイトでは、ユーザー利便性向上のためCookieを使用する場合があります。ブラウザの設定によりCookieを無効にすることも可能ですが、一部機能が制限される場合があります。</p>
+
+    <h2>8. アクセス解析ツールについて</h2>
+    <p>当社のウェブサイトでは、Google Analytics等のアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用してデータを収集しますが、個人を特定する情報は含まれません。</p>
+
+    <h2>9. 免責事項</h2>
+    <p>当社のウェブサイトからリンクされた外部サイトについては、当社は責任を負いません。リンク先サイトのプライバシーポリシーをご確認ください。</p>
+
+    <h2>10. プライバシーポリシーの変更</h2>
+    <p>当社は、法令の改正やサービス内容の変更に伴い、本ポリシーを改定することがあります。変更後のポリシーは本ウェブサイト上に掲載した時点から効力を生じるものとします。</p>
+
+    <h2>11. お問い合わせ</h2>
+    <p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p>
+    <p>
+      <strong>株式会社MEDI ALPHA PLUS</strong><br>
+      〒103-0022　東京都中央区日本橋室町1丁目11番12号<br>
+      日本橋水野ビル7階<br>
+      フリーダイヤル：<a href="tel:0120843297">0120-843-297</a>（受付時間 平日 10:00〜17:00）<br>
+      メール：<a href="mailto:info@medialphaplus.com">info@medialphaplus.com</a>
+    </p>
+
+    <div class="date-note">制定日：2024年4月1日　最終改定：2026年3月1日</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="legal.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@medialphaplus.com">info@medialphaplus.com</a>
+    </div>
+    <div class="footer-copy">© 2026 株式会社MEDI ALPHA PLUS. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    function closeMobileNav() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.getElementById('hamburgerBtn').classList.remove('active');
+    }
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav    = document.getElementById('mobileNav');
+    const mobileOverlay= document.getElementById('mobileOverlay');
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        mobileOverlay.classList.toggle('open');
+      });
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', closeMobileNav);
+    }
+  </script>
+
+</body>
+</html>
