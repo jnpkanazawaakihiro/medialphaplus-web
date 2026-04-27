@@ -827,6 +827,137 @@
     .compliance-body { font-size: 13px; color: var(--text-mid); line-height: 1.8; }
 
     /* ═══════════════════════════════
+       BCP・情報セキュリティ
+    ═══════════════════════════════ */
+    #bcp-security {
+      background: var(--off-white);
+      padding: 100px 52px;
+    }
+    .bcp-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    /* 2カラムグリッド */
+    .bcp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 0;
+    }
+    /* カード本体 */
+    .bcp-card {
+      background: #fff;
+      border: 1px solid var(--gray-light);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(13,43,94,0.06);
+      transition: box-shadow 0.28s, transform 0.28s;
+      position: relative;
+      overflow: hidden;
+    }
+    .bcp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--navy), var(--blue), var(--cyan));
+      border-radius: 20px 20px 0 0;
+    }
+    .bcp-card:hover {
+      box-shadow: 0 12px 40px rgba(13,43,94,0.11);
+      transform: translateY(-4px);
+    }
+    /* カードヘッダー */
+    .bcp-card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .bcp-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(13,43,94,0.22);
+    }
+    .bcp-icon i { font-size: 20px; color: #fff; }
+    .bcp-card-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--blue);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 6px;
+    }
+    .bcp-card-title {
+      font-family: 'Zen Old Mincho', serif;
+      font-size: clamp(17px, 1.6vw, 21px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: 0.04em; line-height: 1.4;
+      margin: 0;
+    }
+    /* 本文 */
+    .bcp-lead {
+      font-size: 13.5px; color: var(--text-mid);
+      line-height: 2; letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+    /* 区切り */
+    .bcp-divider {
+      width: 36px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), rgba(197,168,100,0.2));
+      border-radius: 2px;
+      margin-bottom: 22px;
+    }
+    /* 箇条書きリスト */
+    .bcp-list {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bcp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-dark);
+      line-height: 1.75;
+    }
+    .bcp-list li i {
+      font-size: 10px;
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    /* 補足ノートボックス */
+    .bcp-note {
+      background: rgba(197,168,100,0.06);
+      border: 1px solid rgba(197,168,100,0.22);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+    }
+    .bcp-note p {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .bcp-note p + p { margin-top: 6px; }
+    /* レスポンシブ */
+    @media (max-width: 900px) {
+      .bcp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 767px) {
+      #bcp-security { padding: 64px 24px; }
+      .bcp-card { padding: 32px 24px; }
+      .bcp-card-title { font-size: 16px; }
+    }
+
+    /* ═══════════════════════════════
        CTA
     ═══════════════════════════════ */
     #about-cta {
@@ -1861,6 +1992,105 @@
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════
+     BCP・情報セキュリティ
+══════════════════════════════ -->
+<section id="bcp-security">
+  <div class="bcp-inner">
+
+    <!-- セクションヘッダー -->
+    <div class="fade-up" style="margin-bottom:52px;">
+      <div class="sec-eyebrow">BCP &amp; Information Security</div>
+      <h2 class="sec-title">事業継続・情報セキュリティへの取り組み</h2>
+      <p class="sec-sub">医療・検体輸送を止めないために。信頼できる体制と情報管理を、継続的に整備しています。</p>
+      <div class="sec-divider"></div>
+    </div>
+
+    <div class="bcp-grid">
+
+      <!-- ① BCP -->
+      <div class="bcp-card fade-up">
+        <div class="bcp-card-head">
+          <div class="bcp-icon"><i class="fa fa-shield-alt"></i></div>
+          <div>
+            <div class="bcp-card-eyebrow">Business Continuity Plan</div>
+            <h3 class="bcp-card-title">事業継続計画（BCP）<br>について</h3>
+          </div>
+        </div>
+
+        <p class="bcp-lead">
+          当社では、災害や事故、感染症の拡大などの不測の事態においても、医療輸送サービスの継続および早期復旧を実現するため、事業継続計画（BCP）を策定しております。
+        </p>
+        <div class="bcp-divider"></div>
+
+        <ul class="bcp-list">
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>緊急時の連絡体制の整備</strong>——担当者・代替要員・連絡フローを明確化し、迅速な初動を確保</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>代替輸送手段の確保</strong>——車両・ルート・協力会社を複数確保し、単一障害点を排除</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>業務継続に必要な人員・資源の確保</strong>——稼働可能人員・備品・保冷資材の最低在庫基準を設定</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>定期的な見直しと改善</strong>——計画の実効性を維持するため、定期的なレビューと更新を実施</span>
+          </li>
+        </ul>
+
+        <div class="bcp-note">
+          <p>医療・検体輸送は「止められない物流」です。BCP策定を通じ、いかなる状況下でもお客様の業務を支え続ける体制を整えております。</p>
+        </div>
+      </div>
+
+      <!-- ② 情報セキュリティ -->
+      <div class="bcp-card fade-up" style="transition-delay:0.1s;">
+        <div class="bcp-card-head">
+          <div class="bcp-icon"><i class="fa fa-lock"></i></div>
+          <div>
+            <div class="bcp-card-eyebrow">Information Security</div>
+            <h3 class="bcp-card-title">情報セキュリティ対策<br>について</h3>
+          </div>
+        </div>
+
+        <p class="bcp-lead">
+          当社では、お客様からお預かりする情報を適切に保護するため、情報セキュリティに関する社内規程を整備し、組織的・技術的な対策を講じております。
+        </p>
+        <div class="bcp-divider"></div>
+
+        <ul class="bcp-list">
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>アクセス権限の管理</strong>——業務上必要な情報のみへのアクセスを許可し、権限を適切に設定・管理</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>情報取り扱いルールの徹底</strong>——機密情報の社外持ち出し禁止・適切な保管・廃棄基準を厳格に運用</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>情報セキュリティ教育の実施</strong>——全従業員・業務委託スタッフへ年1回以上の教育を実施し、継続的な意識向上を推進</span>
+          </li>
+          <li>
+            <i class="fa fa-check-circle"></i>
+            <span><strong>秘密保持誓約書の取得</strong>——業務に従事するすべての関係者より誓約書を取得し、情報管理体制を強化</span>
+          </li>
+        </ul>
+
+        <div class="bcp-note">
+          <p>患者情報・検体情報・取引先情報を扱う医療輸送事業者として、情報セキュリティは事業の根幹をなすものと認識しております。今後もお客様の信頼に応える体制を維持・強化してまいります。</p>
+        </div>
+      </div>
+
+    </div><!-- /.bcp-grid -->
+  </div><!-- /.bcp-inner -->
+</section>
+
 
 <!-- BRIDGE: compliance → CTA (white→dark) -->
 <div class="grad-bridge" style="height:130px;">
