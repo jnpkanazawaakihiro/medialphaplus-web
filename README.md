@@ -57,7 +57,12 @@
 │   ├── supply-flow-3.jpg       ← 物流フロー STEP3：車内積み込み（ロゴ除去済）
 │   ├── supply-flow-4.jpg       ← 物流フロー STEP4：自社倉庫保管
 │   ├── supply-flow-5.jpg       ← 物流フロー STEP5：医療機関受付への納品
-│   └── urine-kit.jpg           ← 尿検査キット商品写真
+│   ├── urine-kit.jpg           ← 尿検査キット商品写真
+│   ├── nyoukensa.jpg           ← サービスカード②：衛生消耗品（尿検査キット・採取袋）
+│   ├── yusousien.jpg           ← サービスカード③：輸送支援（旧画像・差替済）
+│   ├── support.jpg             ← サービスカード③：輸送支援コンサルティング（現行）
+│   ├── iryouyusou.jpg          ← サービスカード①：医療輸送（キッズクリニック系）
+│   └── vehicle-nvan-parking.png ← N-VAN黒ナンバー駐車場写真（AI生成）
 └── videos/
     ├── hero-m.mp4          ← ヒーロー Mフレーム動画（車の動画・ループ再生）
     ├── hero-a.mp4          ← ヒーロー Aフレーム動画（医療機関の動画）
@@ -157,6 +162,23 @@
 
 ---
 
+## ✅ 最近の変更履歴（2026-03-24）
+
+| 変更内容 | 対象ファイル |
+|----------|-------------|
+| UN3373バッジの改行修正（`white-space: nowrap`追加） | index.html |
+| why-photo-2 の縦位置調整（`object-position: center 30%`） | index.html |
+| why-photo-3・4 のグラデーション緩和（38%/62%） | index.html |
+| ヒーローinfo帯の左揃え統一（全アイテムpadding-left均等化） | index.html |
+| サービス円形カード画像入替：医療輸送→iryouyusou.jpg、衛生消耗品→nyoukensa.jpg、輸送支援→support.jpg | index.html |
+| 物流フロー画像（supply-flow-1〜4）更新 | index.html |
+| N-VAN車両写真を黒ナンバー駐車場画像（vehicle-nvan-parking.png）に更新 | vehicles.html |
+| ナビ電話カード統一（min-width:270px、padding:4px 32px 4px 9px、icon:38px、番号:20px、radius:12px） | 全ページ（7ファイル） |
+| ヒーロー動画セクションの輝度調整（brightness 0.45→0.62） | index.html |
+| ミニPCサイズのCTAボタン被り修正（gap/padding調整） | index.html |
+
+---
+
 ## ⚠️ 注意事項・既知の問題
 
 | 項目 | 状況 |
@@ -173,7 +195,7 @@
 | 用途 | URL |
 |------|-----|
 | オンラインショップ | https://medialphaplus.myshopify.com/ |
-| 法人見積フォーム | https://medialphaplus.myshopify.com/pages/contact |
+| 法人見積フォーム | https://medialphaplus.myshopify.com/pages/%E3%81%8A%E8%A6%8B%E7%A9%8D-1 |
 | Instagram | https://www.instagram.com/medialphaplus |
 | YouTube チャンネル | https://www.youtube.com/@MediAlphaPlus |
 | YouTube 動画 | https://youtu.be/ODCeUW3DBvU |
@@ -194,4 +216,4 @@ README.md に全構成が記載されています。まず読み込んでくだ�
 
 ---
 
-*最終更新：2026-03-22*
+*最終更新：2026-03-24*
